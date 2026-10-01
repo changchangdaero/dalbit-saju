@@ -12,8 +12,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: var(--paper); }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { margin: 0; min-width: 320px; max-width: 100%; overflow-x: hidden; background: var(--paper); }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
@@ -25,7 +25,7 @@ main { overflow: hidden; }
 
 .hero { min-height: 720px; position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; padding: 110px clamp(24px, 9vw, 150px) 80px; background: radial-gradient(circle at 77% 35%, #e8e0cc 0 2%, transparent 25%), linear-gradient(125deg, #f5f0e6, #ece4d5); }
 .hero::after { content: ''; position: absolute; inset: auto 0 0; height: 80px; background: linear-gradient(178deg, transparent 48%, var(--paper) 50%); }
-.hero-copy { position: relative; z-index: 2; }
+.hero-copy { position: relative; z-index: 2; min-width: 0; }
 .eyebrow, .section-kicker { color: var(--accent); font-size: 12px; letter-spacing: .16em; font-weight: 600; }
 .sparkle { color: #bd7b5f; display: inline-block; margin-right: 6px; }
 .sparkle.small { font-size: 11px; }
@@ -34,7 +34,7 @@ h1 { font-size: clamp(48px, 5.2vw, 78px); line-height: 1.25; letter-spacing: -.0
 h1 em, .about em { color: var(--accent); font-style: normal; position: relative; }
 h1 em::after { content: ''; position: absolute; height: 9px; left: 0; right: 0; bottom: 3px; background: #d8bcb0; opacity: .45; z-index: -1; }
 .hero-description { color: #686c65; font-family: 'Gowun Batang', serif; font-size: 17px; line-height: 1.9; }
-.moon-scene { position: relative; width: min(38vw, 500px); aspect-ratio: 1; justify-self: center; }
+.moon-scene { position: relative; width: min(38vw, 500px); max-width: 100%; aspect-ratio: 1; justify-self: center; }
 .moon { position: absolute; inset: 13%; border-radius: 50%; background: radial-gradient(circle at 36% 30%, #fffdf1, #dfd2b6 62%, #c1aa86); box-shadow: 0 25px 80px #81745d33, inset -18px -12px 35px #998a6c24; display: grid; place-items: center; }
 .moon::before, .moon::after { content: ''; position: absolute; border-radius: 50%; background: #baa98a1c; }
 .moon::before { width: 19%; height: 14%; left: 24%; top: 25%; transform: rotate(-22deg); }
